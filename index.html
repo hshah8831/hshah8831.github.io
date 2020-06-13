@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bollywood Quiz</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+  $(document).ready(function(){
+    $("input").click(function(){
+      $.get("https://8bmrdj9gk8.execute-api.us-east-1.amazonaws.com/prod/player", function(data, status){
+        //alert("Data: " + data + "\nStatus: " + status);
+        tableFromJson(data);
+      });
+    });
+  });
+  </script>
+</head>
+
+<body>
+  <script src="cont.js"></script>
+
+  <div class="container" class="table table-dark"  >
+
+    <h2>Bollywood Quiz Score Board</h2>
+
+    <p class="container">
+    <input type='button' class="btn btn-primary" value='Refresh Scores'  />
+    </p>
+
+  <div id='showData1' class="table table-dark"   ></div>
+  <div id='showData2' class="table table-dark"   ></div>
+  <div id='showData3' class="table table-dark"   ></div>
+</div>
+
+<footer class="container">
+
+  <p><small>Made with <span style="font-size:150%;color:red;">&hearts;</span> by Ravina and Hardik<small></p>
+
+</footer>
+</body>
+
+</html>
